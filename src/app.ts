@@ -1,6 +1,6 @@
 import express from "express";
 import router from '../src/routes'
-import checkHeader from "./middlewares";
+import { checkHeader } from "./middlewares";
 
 const app = express();
 const port = 3000;
