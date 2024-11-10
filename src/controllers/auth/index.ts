@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import { formatResponse } from "../utils/formatResponse";
-import SAuth from "../services/auth/auth.services";
+import { formatResponse } from "../../utils/formatResponse";
+import SAuth from "../../services/auth/auth.services";
 
 const CLogin = async (
     req: Request,

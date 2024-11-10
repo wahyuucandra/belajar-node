@@ -6,7 +6,7 @@ import {
     searchBookByAuthor, 
     searchBookById, 
     updateBookById 
-} from "../controllers/book.controller";
+} from "../../controllers/book";
 
 const BookRouter = Router();
 

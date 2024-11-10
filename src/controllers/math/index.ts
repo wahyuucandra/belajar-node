@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { formatResponse } from "../utils/formatResponse";
-import { sMathOperation } from "../services/math.services";
-import { deleteHistory, getAllHistory, logHistory } from "../utils/history";
+import { formatResponse } from "../../utils/formatResponse";
+import { sMathOperation } from "../../services/math";
+import { deleteHistory, getAllHistory, logHistory } from "../../utils/history";
 
 const operations = [
     { id: '1', name: 'add', expression: '+' },

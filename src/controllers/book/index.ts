@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { formatResponse } from "../utils/formatResponse";
+import { formatResponse } from "../../utils/formatResponse";
 
 const books = [
     { id: '1', title: 'Judul 1', author: 'Author 1' },

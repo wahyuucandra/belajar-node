@@ -30,16 +30,7 @@ const checkAuth: RequestHandler = (req, res, next) => {
     }
 
     try {
-        const verify = verifyToken(token, env.ACCESS_TOKEN_SECRET);
-
-        if (!verify) {
-            if (verify === null) {
-                res.status(403).json(formatResponse(403, "Token expired", null));
-            } else {
-                res.status(401).json(formatResponse(401, "Unauthorized", null));
-            }
-            return;
-        }
+        verifyToken(token, env.ACCESS_TOKEN_SECRET);
     }catch(err: any){
         res.status(500).json(formatResponse(500, err.message, null));
     }

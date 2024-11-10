@@ -3,7 +3,7 @@ import {
     CLogin, 
     CRefreshToken, 
     CRegister 
-} from "../controllers/auth.controller";
+} from "../../controllers/auth";
 
 
 const userRouter = Router();

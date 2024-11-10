@@ -6,7 +6,7 @@ import {
     getMathWithParams, 
     getMathWithQuery, 
     postMathWithBody 
-} from "../controllers/math.controller";
+} from "../../controllers/math/index";
 
 const MathRouter = Router();
 
