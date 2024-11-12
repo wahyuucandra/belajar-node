@@ -6,7 +6,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./dist/app.js",
     "dev": "nodemon ./src/app.ts"
-    
   },
   "prisma": {
     "seed": "ts-node src/prisma/seed.ts",
@@ -26,8 +25,10 @@
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
     "prisma": "^5.22.0",
+    "redis": "^4.7.0",
     "save-dev": "^0.0.1-security",
-    "uuid": "^11.0.2"
+    "uuid": "^11.0.2",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

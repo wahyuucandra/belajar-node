@@ -2,7 +2,6 @@ import { Request, Response } from "express"
 import { blogService } from "../../services/blog"
 import { formatResponse } from "../../utils/formatResponse"
 
-
 export const getAllBlog = async (req: Request, res: Response) => {
     const data = await blogService.findAll()
 

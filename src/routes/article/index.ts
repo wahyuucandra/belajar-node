@@ -1,8 +1,9 @@
 import { Router } from "express";
 import { 
+    CGetAllArticles,
     createArticleWithTags,
     deleteArticleById, 
-    getAllArticles, 
+    //getAllArticles, 
     getArticleById, 
     postCreateArticle, 
     updateArticleById 
@@ -10,7 +11,8 @@ import {
 
 const ArticleRouter = Router()
 
-ArticleRouter.get("/", getAllArticles)
+// ArticleRouter.get("/", getAllArticles)
+ArticleRouter.get("/", CGetAllArticles)
 ArticleRouter.get("/:id", getArticleById)
 ArticleRouter.post("/", postCreateArticle)
 ArticleRouter.delete("/:id", deleteArticleById)

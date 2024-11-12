@@ -1,9 +1,9 @@
-import { Request, Response } from "express"
+import { NextFunction, Request, Response } from "express"
 import { CarService } from "../../services/car"
 import { formatResponse } from "../../utils/formatResponse"
 
 
-export const getAllCar = async (req: Request, res: Response) => {
+export const getAllCar = async (req: Request, res: Response, next: NextFunction) => {
     const data = await CarService.findAll()
 
     if (!data) {

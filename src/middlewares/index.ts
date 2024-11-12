@@ -1,4 +1,4 @@
-import { NextFunction, RequestHandler } from "express"
+import { RequestHandler } from "express"
 import { formatResponse } from "../utils/formatResponse";
 import env from "../config/env.config";
 import { verifyToken } from "../utils/jwt";

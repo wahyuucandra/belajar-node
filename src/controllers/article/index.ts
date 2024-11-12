@@ -1,6 +1,7 @@
 import { SArticle } from "../../services/articles"
 import { Request, Response } from "express"
 import { formatResponse } from "../../utils/formatResponse"
+import redisClient from "../../config/redis.config"
 
 
 export const getAllArticles = async (req: Request, res: Response) => {
@@ -84,5 +85,25 @@ export const createArticleWithTags = async (req: Request, res: Response) => {
         res.json(formatResponse(201, "Success", newArticle));
     } catch (error: any) {
         res.status(500).json({ error: "Failed to create article : " + error.message });
+    }
+};
+
+export const CGetAllArticles = async (req: Request, res: Response) => {
+    try {
+        const articlesCache = await redisClient.getValue("articles");
+        if (articlesCache) {
+            console.log("from cache");
+
+            res.json(formatResponse(200, "Success", JSON.parse(articlesCache)));
+            return;
+        }
+        const articles = await SArticle.findAll();
+        //   await redisClient.setValue("articles", JSON.stringify(articles));
+        await redisClient.setValue("articles", JSON.stringify(articles), {
+            EX: 60 * 60,
+        })
+        res.json(formatResponse(200, "Success", articles));
+    } catch (error: any) {
+        res.status(500).json({ error: error.message });
     }
 };
